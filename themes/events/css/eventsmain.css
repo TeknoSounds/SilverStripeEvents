@@ -1,0 +1,61 @@
+html {
+	background: repeat scroll 0 0 #444;
+}
+
+body {
+	margin-bottom: 0px;
+	font-family: Verdana, Lucida, sans-serif; 
+}
+
+#Header {
+	background: repeat-x scroll left center #333;
+	width: 768px;
+}
+
+#Navigation {
+	background: no-repeat scroll center bottom #333;	
+}
+
+#Navigation ul li a.current, 
+#Navigation ul li a.section, 
+#Navigation ul li a.section:hover, 
+#Navigation ul li a.current:hover {
+	background: no-repeat scroll left top #FFFFFF;
+	color: #444444;
+}
+
+#Navigation ul li a.current span, 
+#Navigation ul li a.section span, 
+#Navigation ul li a.section:hover span, 
+#Navigation ul li a.current:hover span {
+	background: no-repeat scroll right top #FFFFFF;
+	color: #444444;
+}
+
+#Navigation ul li a:hover { 
+	background: no-repeat left top #555;
+	color: #fff;
+	cursor: pointer;
+}
+
+#Navigation ul li a:hover span {
+	background: no-repeat right top #555;
+	cursor: pointer;
+}
+
+#TopBanner{
+
+}
+
+a:link { color: #333; }
+a:visited { color: #222; } 
+a:hover { color: #000; } 
+
+
+#Footer {
+	background: no-repeat scroll left bottom #333;
+}
+
+#Footer .footerTop {
+	background: no-repeat scroll left top #333;
+}

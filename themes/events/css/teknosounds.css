@@ -1,0 +1,59 @@
+.EventsList{
+	
+}
+
+.EventHolder{
+	padding-bottom:10px;
+	overflow:hidden;
+}
+
+.TimeDateBar{
+	background-color: red;
+	height: 136px;
+	padding-top: 1px;
+	padding-right: 1px;
+	color:white;
+}
+
+.Share{
+	float:right;
+	
+	padding-left: 5px;
+}
+
+.PictureColumn{
+	float:left;
+	width:120px;
+	background-color:#fff;
+}
+
+.InfoColumn{
+	float:left;
+	width:200px;
+	background-color:#000000;
+}
+
+.HeadlinerColumn{
+	float:left;
+	width:220px;
+	background-color:#fff;
+}
+
+.LocalSupportColumn{
+	float:left;
+	width:220px;
+	background-color:#ccc;
+}
+
+.ClearFloats{
+	clear:both;
+	height: 0;
+}
+
+.EventsList{
+	padding-bottom:10px;
+}
+
+.UserHolder{
+	
+}

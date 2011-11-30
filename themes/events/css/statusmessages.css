@@ -1,0 +1,37 @@
+#MainInfo{
+	padding-bottom:20px;
+	font-weight:bold;
+	font-size:12px;
+}
+
+#SuccessfulBigger,
+#Successful {
+	font-size:12px;
+	color:green;
+	padding-bottom:10px;
+	font-weight:bold;
+}
+
+#SuccessfulBigger {
+	font-size:13px;
+}
+
+#Duplicate {
+	font-size:12px;
+	color:blue;
+	padding-bottom:10px;
+	font-weight:bold;
+}
+
+#Failure {
+	color:red;
+	padding-bottom:10px;
+	font-size:12px;
+	font-weight:bold;
+}
+
+#NotYetPromoted{
+	font-size:12px;
+	padding-bottom:10px;
+	font-weight:bold;
+}

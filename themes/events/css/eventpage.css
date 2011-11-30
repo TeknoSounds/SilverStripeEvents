@@ -1,0 +1,26 @@
+#FlyerImage{
+	float:left;
+	padding:0 20px 20px 0;
+}
+
+.ShareContainer{
+	background:white;
+	padding:2px;
+}
+
+#Details{
+	float:left;
+}
+
+#Title{
+	font-weight: bold;
+	float:left;
+	width:75px;
+}
+#Value{
+	float:left;
+}
+
+.clear{
+	clear:both;
+}

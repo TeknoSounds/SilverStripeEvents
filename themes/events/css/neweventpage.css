@@ -1,0 +1,77 @@
+form fieldset .middleColumn {
+	width:auto;
+	clear:right;
+}
+
+div.field .middleColumn {
+	margin:0 !important;
+    width:auto;
+}
+
+fieldset {
+	background:#E9E9E9;
+}
+
+form fieldset label {
+	float:left;
+	width:100px;
+}
+
+.required{
+	border:none;
+	width: 250px;
+}
+
+#Date, #Time {float: left;}
+#Date input.text {width: 80px;}
+#Time input.text {width: 80px;}
+#Date .middleColumn {width: 120px; float:left}
+#Time .middleColumn {width: 50px; float:left}
+#Date label{width: 96px}
+#Time label{width: 70px}
+.dropdowntime{width:150px;}
+#EndDate {clear:left}
+
+#EndDate, #EndTime {float: left;}
+#EndDate input.text {width: 80px;}
+#EndTime input.text {width: 80px;}
+#EndDate .middleColumn {width: 120px; float:left}
+#EndTime .middleColumn {width: 50px; float:left}
+#EndDate label{width: 96px}
+#EndTime label{width: 70px}
+.dropdowntime{width:150px;}
+#Venue {clear:left}
+
+#City, #OtherCity {float: left;}
+#City input.text, #OtherCity input.text {width: 140px;}
+#City .middleColumn, #OtherCity .middleColumn {width: 220px;}
+#State {clear:left}
+
+#State, #OtherState {float: left;}
+#State input.text, #OtherState input.text {width: 140px;}
+#State .middleColumn, #OtherState .middleColumn {width: 220px;}
+#HeadlinerList {clear:left}
+#TicketLink {clear:left}
+
+#Form_NewEventForm_ArtistTopSeparator,
+#Form_NewEventForm_ArtistBottomSeparator,
+#Form_NewEventForm_PriceBottomSeparator
+{
+	clear:left; padding-top:25px;
+}
+
+#LastKnownPrice, #DoorPrice {float: left;}
+#LastKnownPrice input.text {width: 80px;}
+#DoorPrice input.text {width: 100px;}
+#LastKnownPrice .middleColumn {width: 120px; float:left}
+#DoorPrice .middleColumn {width: 50px; float:left}
+#LastKnownPrice label{width: 96px}
+#DoorPrice label{width: 70px}
+#FacebookEvent {clear:left}
+
+#Form_NewEventForm_ArtistDetail,
+#Form_NewEventForm_PriceDetail
+{
+	width: 400px;
+	clear:left;
+}

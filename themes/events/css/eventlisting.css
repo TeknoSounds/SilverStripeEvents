@@ -1,0 +1,144 @@
+#ExpandLink{
+	text-align:center;
+	margin:auto;
+	cursor: pointer;
+}
+
+.EventsList{
+	
+}
+
+.EventHolder{
+	padding-bottom:10px;
+	overflow:hidden;
+	float:left;
+	width:100%;
+}
+
+.TimeDateBar{
+	background-color: #999;
+	min-height: 16px;
+	padding: 2px;
+	color:white;
+	float: left;
+	width: 100%;
+}
+
+.BarInfo{
+	float:left;
+	width: 98.5%;
+}
+
+.EditLink{
+	float:left;
+	width: 2em;
+}
+.Month{
+	float:left;
+	width: 3em;
+}
+
+.Day{
+	float:left;
+	width: 5em;
+}
+
+.Title{
+	float:left;
+	width: 250px;
+}
+
+.HeadlinerList{
+	float:left;
+	width:200px;
+}
+
+.Venue{
+	float:right;
+	text-align: right;
+}
+
+.ShareContainer{
+	padding-right: 10px;
+}
+
+.Share{
+	float:right;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.ClearFloats{
+	clear:both;
+	height: 0;
+    overflow: hidden;
+
+}
+
+.EventsList{
+	padding-bottom:10px;
+}
+
+.UserHolder{
+	
+}
+
+/* Start of Column CSS */
+.container4 {
+	clear:left;
+	float:left;
+	width:100%;
+	overflow:hidden;
+	background-color:#ccc;
+}
+.container3 {
+	clear:left;
+	float:left;
+	width:100%;
+	position:relative;
+	right:25%;
+	background-color:#fff;
+}
+.container2 {
+	clear:left;
+	float:left;
+	width:100%;
+	position:relative;
+	right:25%;
+	background-color:#ccc;
+}
+.container1 {
+	float:left;
+	width:100%;
+	position:relative;
+	right:25%;
+	background-color:#fff;
+}
+.col1 {
+	float:left;
+	width:21%;
+	position:relative;
+	left:77%;
+	overflow:hidden;
+}
+.col2 {
+	float:left;
+	width:21%;
+	position:relative;
+	left:81%;
+	overflow:hidden;
+}
+.col3 {
+	float:left;
+	width:21%;
+	position:relative;
+	left:85%;
+	overflow:hidden;
+}
+.col4 {
+	float:left;
+	width:21%;
+	position:relative;
+	left:89%;
+	overflow:hidden;
+}

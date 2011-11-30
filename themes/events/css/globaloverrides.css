@@ -1,0 +1,140 @@
+ html {
+    background-image: url(../images/teknosound/GrayBlueGradientBackground.jpg);
+}
+
+body {
+	margin-bottom: 0px;
+	font-family: Verdana, Lucida, sans-serif; 
+	background-image: url(../images/teknosound/GrayBlueGradientBackground.jpg);
+	background-attachment:fixed;
+	color: #bebebe;
+}
+
+#Header {
+    background-image: url(../images/teknosound/Header.jpg);
+    
+    width: 768px;
+	height: 76px;  /* after removing text page title the header collapsed, hard coding in height to size of banner */
+}
+
+#Navigation {
+    background: url(../images/teknosound/NavBarTabBackground.png);
+	padding-top: 0px;
+	border-top: 3px solid black;
+	font: bold 11px/26px Arial,Calibri,Verdana,Geneva,sans-serif;
+	height: 25px;
+	border-bottom: 3px solid black;
+	
+
+}
+
+#Navigation ul li a.current, 
+#Navigation ul li a.section, 
+#Navigation ul li a.section:hover, 
+#Navigation ul li a.current:hover {
+     background: url(../images/teknosound/NavBarSelectedBackground.png);
+    color: #ccc;
+}
+
+#Navigation ul li a.current span, 
+#Navigation ul li a.section span, 
+#Navigation ul li a.section:hover span, 
+#Navigation ul li a.current:hover span {
+    background: url(../images/teknosound/NavBarSelectedBackground.png);
+    color: #fff; /* button text when selected and pressed down in nav bar*/
+}
+
+#Navigation ul li a:hover { 
+	background: url(../images/teknosound/NavBarSelectedBackground.png);
+	color: #cccccc;  /* font color when button is hovered over in nav bar*/
+	cursor: pointer;
+}
+
+#Navigation ul li a:hover span {
+	background: url(../images/teknosound/NavBarSelectedBackground.png);
+	cursor: pointer;
+}
+
+#TopBanner{
+
+}
+
+
+a:link { color: #bebebe; }
+a:visited { color: #888; } 
+a:hover { color: #33acbe; } 
+
+
+#Footer {
+    background: no-repeat scroll left bottom #000510;
+}
+
+#Footer .footerTop {
+    background: no-repeat scroll left top #000510;
+	
+}
+
+
+
+
+#Container {
+    background: url(../images/teknosound/BlockTransparentBackground.png);
+    padding-bottom: 15px;
+    width: 800px;
+	border: 1px solid black;
+}
+
+.TimeDateBar {
+background: url(../images/teknosound/HeaderBar.png);
+border-bottom: 6px solid #020C22;
+border-top: 1px solid #020C22;
+border-left: 1px solid #020C22;
+border-right: 1px solid #020C22;
+padding-top: 3px;
+padding-left: 5px;
+}
+
+.ShareContainer {
+background: url(../images/teknosound/iconbar.png);
+height: 15px;
+margin-bottom: 2px;
+}
+
+.container1,
+.container2,
+.container3,
+.container4
+{
+background: transparent;
+}
+
+.EventHolder {
+
+}
+
+#Header h1 { 
+font-size: 0em;   
+}
+
+#Header p {
+font-size: 0;
+}
+
+.BarInfo {
+padding-top: 3px;
+padding-bottom: 3px;
+}
+
+.required {
+    background: none repeat scroll 0 0 #CCC;
+    border: 1px solid #011038;
+    color: #DC1313;
+	font-weight: bold;
+    margin: 4px 0 0 3px;
+    padding: 5px;
+    width: 96%;
+}
+
+input.action {
+background: #ccc;
+}

@@ -1,0 +1,23 @@
+form fieldset .middleColumn {
+	width:auto;
+	clear:right;
+}
+
+div.field .middleColumn {
+	margin:0 !important;
+    width:auto;
+}
+
+fieldset {
+	background:#E9E9E9;
+}
+
+form fieldset label {
+	float:left;
+	width:100px;
+}
+
+.required{
+	border:none;
+	width: 250px;
+}

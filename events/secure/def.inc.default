@@ -6,7 +6,9 @@ $vbSQLPass = "";
 $vbSQLTable = "";
 
 $FBappID = "";
-    
+
+$vb_secret_key = "";
+
 $state_to_abbr_list = array ('Alabama'=>"AL",
     'Alaska'=>"AK",
     'Arizona'=>"AZ",

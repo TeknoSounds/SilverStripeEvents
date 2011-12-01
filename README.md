@@ -1,6 +1,6 @@
-An events page created by filename.exe. 
-Protected under Attribution-NonCommercial-ShareAlike [CC BY-NC-SA]. 
-Contact me on github (filenameexe) for commercial works.
+An events page created by filename.exe. All rights reserved.
 
-Currently working in cooperation with TeknoSounds.com to bring a new dynamicly linked full website built on the SilverStripe platform.
-At one point I would like to package this into a nice easy to use module, but it's currently being built as a full site.
+Feel free to use this for development at no charge.  
+Once the original, or a derivative, work enters the planning stage on launching into a live server, please contact me on github (filenameexe) for a licensing agreement.
+
+Thanks and enjoy!

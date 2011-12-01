@@ -12,7 +12,9 @@ Instructions
 ============
 
 1. Download and setup https://github.com/chillu/silverstripe-recaptcha
-2. Move events into your SilverStripe home directory.
+2. Move events into your SilverStripe home directory
+    1. Move your 'mysite/_config.php' into 'events/'
+    2. Remove your 'mysite' directory.
 3. Move themes into your SilverStripe themes directory.
 4. Run ?flush=1.
 5. Login to $URL/admin.

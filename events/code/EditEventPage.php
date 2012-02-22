@@ -139,7 +139,7 @@ class EditEventPage_Controller extends Page_Controller {
 	}
 	
 	public function doSubmit($data, $form) {
-		include('../mysite/secure/def.inc');
+		include('../events/secure/def.inc');
 		
 		// Facebook Parse
 		$facebookURL = $data['FacebookEvent'];

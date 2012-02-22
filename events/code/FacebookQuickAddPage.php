@@ -27,7 +27,7 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
 	}
 	
 	public function create_new_vb_thread($date, $name, $venue, $city, $state, $description) {
-		include('../mysite/secure/def.inc');
+		include('../events/secure/def.inc');
 		//set POST variables
 		$url = 'http://teknosounds.com/messageboard/create_thread.php';
 		$fields = array(
@@ -65,7 +65,7 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
 	}
 	
 	public function doCreate($data, $form) {
-		include('../mysite/secure/def.inc');
+		include('../events/secure/def.inc');
 
 		// Find facebook eid
 		if ($data){

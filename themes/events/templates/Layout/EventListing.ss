@@ -5,7 +5,7 @@
 	Expand All
 </div>
 
- <% if false %> 
+ <% if false %>
 <div class="EventsList">
 	<% control Users %>
 		<div class="UserHolder">
@@ -13,7 +13,7 @@
 		</div>
 	<% end_control %>
 </div>
- <% end_if %> 
+ <% end_if %>
 
 <div class="EventsList">
 	<% control Events %>
@@ -192,6 +192,43 @@
 		</div>
 	<% end_control %>
 </div>
+<div id="floatdiv" style="
+    position:absolute;
+    width:200px;height:50px;left:10px;
+    padding:16px;background:#FFFFFF;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    border:2px solid #2266AA;
+	color:red;
+	font-weight:normal;
+    z-index:100">
+This is a floating javascript menu.
+</div>
+
+<script type="text/javascript">
+    floatingMenu.add('floatdiv',
+        {
+            // Represents distance from left or right browser window
+            // border depending upon property used. Only one should be
+            // specified.
+            targetLeft: 10,
+            // targetRight: 10,
+
+            // Represents distance from top or bottom browser window
+            // border depending upon property used. Only one should be
+            // specified.
+            // targetTop: 10,
+            // targetBottom: 0,
+
+            // Uncomment one of those if you need centering on
+            // X- or Y- axis.
+            // centerX: true,
+            centerY: true,
+
+            // Remove this one if you don't want snap effect
+            snap: true
+        });
+</script>
 <script type="text/javascript">
 	(function($) {
 		$(document).ready(function(){

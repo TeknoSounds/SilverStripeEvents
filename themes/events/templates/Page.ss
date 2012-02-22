@@ -18,6 +18,7 @@
 			 @import url(themes/blackcandy/css/ie6.css);
 			</style> 
 		<![endif]-->
+		<script type="text/javascript" src="/home/tsadmin/public_html/listings/events/javascript/floatingmenu.v1.7.js"></script> 
 	</head>
 <body>
 	<div id="BgContainer">

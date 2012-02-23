@@ -3,27 +3,27 @@
 }
 
 body {
-	margin-bottom: 0px;
-	font-family: Verdana, Lucida, sans-serif;
-	background-image: url(../images/teknosound/GrayBlueGradientBackground.jpg);
-	background-attachment:fixed;
-	color: #bebebe;
+    margin-bottom: 0px;
+    font-family: Verdana, Lucida, sans-serif;
+    background-image: url(../images/teknosound/GrayBlueGradientBackground.jpg);
+    background-attachment:fixed;
+    color: #bebebe;
 }
 
 #Header {
     background-image: url(../images/teknosound/Header.jpg);
 
     width: 768px;
-	height: 76px;  /* after removing text page title the header collapsed, hard coding in height to size of banner */
+    height: 76px;  /* after removing text page title the header collapsed, hard coding in height to size of banner */
 }
 
 #Navigation {
     background: url(../images/teknosound/NavBarTabBackground.png);
-	padding-top: 0px;
-	border-top: 3px solid black;
-	font: bold 11px/26px Arial,Calibri,Verdana,Geneva,sans-serif;
-	height: 25px;
-	border-bottom: 3px solid black;
+    padding-top: 0px;
+    border-top: 3px solid black;
+    font: bold 11px/26px Arial,Calibri,Verdana,Geneva,sans-serif;
+    height: 25px;
+    border-bottom: 3px solid black;
 
 
 }
@@ -45,14 +45,14 @@ body {
 }
 
 #Navigation ul li a:hover {
-	background: url(../images/teknosound/NavBarSelectedBackground.png);
-	color: #cccccc;  /* font color when button is hovered over in nav bar*/
-	cursor: pointer;
+    background: url(../images/teknosound/NavBarSelectedBackground.png);
+    color: #cccccc;  /* font color when button is hovered over in nav bar*/
+    cursor: pointer;
 }
 
 #Navigation ul li a:hover span {
-	background: url(../images/teknosound/NavBarSelectedBackground.png);
-	cursor: pointer;
+    background: url(../images/teknosound/NavBarSelectedBackground.png);
+    cursor: pointer;
 }
 
 #TopBanner{
@@ -81,7 +81,7 @@ a:hover { color: #33acbe; }
     background: url(../images/teknosound/BlockTransparentBackground.png);
     padding-bottom: 15px;
     width: 800px;
-	border: 1px solid black;
+    border: 1px solid black;
 }
 
 .TimeDateBar {
@@ -129,7 +129,7 @@ padding-bottom: 3px;
     background: none repeat scroll 0 0 #CCC;
     border: 1px solid #011038;
     color: #DC1313;
-	font-weight: bold;
+    font-weight: bold;
     margin: 4px 0 0 3px;
     padding: 5px;
     width: 96%;

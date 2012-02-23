@@ -23,27 +23,27 @@ class User extends DataObject {
 		'Youtube' => 'Varchar(50)',
 		'Picture' => 'Text'
 	);
-	
+
 	static $summary_fields = array(
    		'Name',
    		'City',
    );
-   
+
 	static $has_one  = array(
 		'UserImage' => 'OriginalImage'
    );
-   
+
 	static $has_many  = array(
 		'Events' => 'Event'
    );
-	
+
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 		return $fields;
 	}
-	
-	// function canCreate() {return true;} 
-	// function canEdit() {return true;} 
+
+	// function canCreate() {return true;}
+	// function canEdit() {return true;}
 	// function canDelete() {return true;}
 
 }

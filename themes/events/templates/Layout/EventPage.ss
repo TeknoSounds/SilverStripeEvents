@@ -1,6 +1,6 @@
-<% require themedCSS(eventpage) %> 
-<% require themedCSS(statusmessages) %> 
-<% require themedCSS(globaloverrides) %> 
+<% require themedCSS(eventpage) %>
+<% require themedCSS(statusmessages) %>
+<% require themedCSS(globaloverrides) %>
 
 <% if UpdateSucccess %>
 	<p id="Successful">Thanks for updating another event listing on Teknosounds! Your rep just went up accordingly!</p>

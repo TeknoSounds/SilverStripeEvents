@@ -1,6 +1,9 @@
 <% require themedCSS(eventlisting) %>
 <% require themedCSS(globaloverrides) %>
 
+<% control Cities %>
+    $City<br/>
+<% end_control %>
 <div id="ExpandLink">
     Expand All
 </div>

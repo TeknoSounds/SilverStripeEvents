@@ -14,33 +14,33 @@ class Artist extends DataObject {
 		'OfficialYoutube' => 'Varchar(50)',
 		'GenreList' => 'Text'
 	);
-	
+
 	static $summary_fields = array(
    		'Name',
    		'OfficialWebpage'
    );
-   
+
 	static $has_one  = array(
 		'ArtistImage' => 'OriginalImage'
    );
-   
+
 	static $has_many_many  = array(
 		'Genres' => 'Genre'
    );
-   
+
 	static $belongs_many_many  = array(
    		'Events' => 'Event'
    );
-	
+
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 		return $fields;
 	}
-	
-	// function canCreate() {return true;} 
-	// function canEdit() {return true;} 
+
+	// function canCreate() {return true;}
+	// function canEdit() {return true;}
 	// function canDelete() {return true;}
-	
+
 	function downloadFile($url){
 		$ch = curl_init();
 		$timeout = 5;
@@ -53,11 +53,11 @@ class Artist extends DataObject {
 	}
 
 	function onBeforeWrite() {
-		
+
 		// DOWNLOAD AND LINK Artist IMAGES
 		// Create a Unix friendly filename
 		$filename = preg_replace("/[^A-Za-z0-9-_\.]*/", "", $this->Name);
-		
+
 		// Verify that what is being downloaded is a picture
 		$ext = strtolower(end(explode('.', $this->ArtistImage)));
 		$acceptedExts = array("jpg", "jpeg", "png", "gif", "bmp", "tiff");
@@ -65,7 +65,7 @@ class Artist extends DataObject {
 			// Download the file to assets/Artists as EventName.ext
 			$artistImageFolder = "../assets/Artists";
 			$fullfilename = $filename . '.' . $ext;
-			
+
 			// Create the folder and download and write the file
 			if (!file_exists($artistImageFolder))
 				mkdir($artistImageFolder, 0755);
@@ -73,16 +73,16 @@ class Artist extends DataObject {
 			$file = fopen("$artistImageFolder/$fullfilename", 'w');
 			fwrite($file, $artistImageBytes);
 			fclose($file);
-			
+
 			//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			// REMOVE shell_exec's
 			//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			
+
 			// Calculates and adds a tailing md5-hash
 			$md5hash = md5_file("../assets/Artists/$fullfilename");
 			rename("../assets/Artists/$fullfilename", "../assets/Artists/" . $this->ID . "-$md5hash.$ext");
 			$fullfilename = $this->ID . "-$md5hash.$ext";
-			
+
 			// Find Folder ID
 			$folderToSave = 'assets/Artists/';
 			$folderObject = DataObject::get_one("Folder", "`Filename` = '{$folderToSave}'");
@@ -93,10 +93,10 @@ class Artist extends DataObject {
 					$imageObject->ParentID = $folderObject->ID;
 					$imageObject->Name = $fullfilename;
 					$imageObject->write();
-					
+
 					// TODO
 					// Remove old flyer, if it exists.
-					
+
 					$this->ArtistImageID = DataObject::get_one('OriginalImage', "`Name` = '{$fullfilename}'")->ID;
 			   } else {
 					$this->ArtistImageID = DataObject::get_one('OriginalImage', "`Name` = '{$fullfilename}'")->ID;

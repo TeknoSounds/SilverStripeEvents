@@ -21,7 +21,7 @@ class LoginPage_Controller extends Page_Controller {
 		);
 		return $form;
 	}
-	
+
 	public function authenticate($data, $form) {
 		$user = DataObject::get_one('User', "`Name` = '{$data['Username']}'");
 		if ($user && $user->Password == md5($data['Password'])){
@@ -32,7 +32,7 @@ class LoginPage_Controller extends Page_Controller {
 		Director::redirect(Director::baseURL(). $this->URLSegment . "/?failure=1");
 		return;
 	}
-	
+
 	public function createuser($request){
 		$form = self::CreateUserForm();
 		$data = array(
@@ -41,7 +41,7 @@ class LoginPage_Controller extends Page_Controller {
 		);
 		return $this->customise($data)->renderWith(array('LoginPage', 'Page'));
 	}
-	
+
 	public function CreateUserForm(){
 		$form = new Form (
 			$this,
@@ -59,7 +59,7 @@ class LoginPage_Controller extends Page_Controller {
 		);
 		return $form;
 	}
-	
+
 	public function doCreateUser($data, $form) {
 		$user = new User();
 		$userExists = DataObject::get_one('User', "`Name` = '{$data['Username']}'");
@@ -74,27 +74,27 @@ class LoginPage_Controller extends Page_Controller {
 		}
 		Director::redirect(Director::baseURL(). $this->URLSegment . "/?duplicate=1");
 	}
-	
+
 	public function logoff($request){
 		Session::set('username', '');
 		Director::redirect(Director::baseURL());
 	}
 
-	
-	
+
+
 	public function Failed() {
 		return isset($_REQUEST['failure']) && $_REQUEST['failure'] == "1";
 	}
-	
+
 	public function CreatingUser() {
 		$URLParams = Director::urlParams(); ;
 		return (strlen($URLParams['ID']) > 0);
 	}
-	
+
 	public function UserCreated() {
 		return isset($_REQUEST['created']) && $_REQUEST['created'] == "1";
 	}
-	
+
 	public function DuplicateUser() {
 		return isset($_REQUEST['duplicate']) && $_REQUEST['duplicate'] == "1";
 	}

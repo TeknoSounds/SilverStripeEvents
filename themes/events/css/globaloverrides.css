@@ -4,7 +4,7 @@
 
 body {
 	margin-bottom: 0px;
-	font-family: Verdana, Lucida, sans-serif; 
+	font-family: Verdana, Lucida, sans-serif;
 	background-image: url(../images/teknosound/GrayBlueGradientBackground.jpg);
 	background-attachment:fixed;
 	color: #bebebe;
@@ -12,7 +12,7 @@ body {
 
 #Header {
     background-image: url(../images/teknosound/Header.jpg);
-    
+
     width: 768px;
 	height: 76px;  /* after removing text page title the header collapsed, hard coding in height to size of banner */
 }
@@ -24,27 +24,27 @@ body {
 	font: bold 11px/26px Arial,Calibri,Verdana,Geneva,sans-serif;
 	height: 25px;
 	border-bottom: 3px solid black;
-	
+
 
 }
 
-#Navigation ul li a.current, 
-#Navigation ul li a.section, 
-#Navigation ul li a.section:hover, 
+#Navigation ul li a.current,
+#Navigation ul li a.section,
+#Navigation ul li a.section:hover,
 #Navigation ul li a.current:hover {
      background: url(../images/teknosound/NavBarSelectedBackground.png);
     color: #ccc;
 }
 
-#Navigation ul li a.current span, 
-#Navigation ul li a.section span, 
-#Navigation ul li a.section:hover span, 
+#Navigation ul li a.current span,
+#Navigation ul li a.section span,
+#Navigation ul li a.section:hover span,
 #Navigation ul li a.current:hover span {
     background: url(../images/teknosound/NavBarSelectedBackground.png);
     color: #fff; /* button text when selected and pressed down in nav bar*/
 }
 
-#Navigation ul li a:hover { 
+#Navigation ul li a:hover {
 	background: url(../images/teknosound/NavBarSelectedBackground.png);
 	color: #cccccc;  /* font color when button is hovered over in nav bar*/
 	cursor: pointer;
@@ -61,8 +61,8 @@ body {
 
 
 a:link { color: #bebebe; }
-a:visited { color: #888; } 
-a:hover { color: #33acbe; } 
+a:visited { color: #888; }
+a:hover { color: #33acbe; }
 
 
 #Footer {
@@ -71,7 +71,7 @@ a:hover { color: #33acbe; }
 
 #Footer .footerTop {
     background: no-repeat scroll left top #000510;
-	
+
 }
 
 
@@ -112,8 +112,8 @@ background: transparent;
 
 }
 
-#Header h1 { 
-font-size: 0em;   
+#Header h1 {
+font-size: 0em;
 }
 
 #Header p {

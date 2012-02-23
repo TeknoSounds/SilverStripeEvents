@@ -1,6 +1,6 @@
-<% require themedCSS(artistpage) %> 
+<% require themedCSS(artistpage) %>
 <% require themedCSS(statusmessages) %>
-<% require themedCSS(globaloverrides) %> 
+<% require themedCSS(globaloverrides) %>
 
 
 <% if UpdateSucccess %>
@@ -14,7 +14,7 @@
 	</a>
 </div>
 <% end_if %>
-					
+
  <% if ArtistImage %>
 	<div id="ArtistImage">
 		<img src="{$ArtistImage.URL}"/>

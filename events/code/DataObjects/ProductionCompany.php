@@ -14,27 +14,27 @@ class ProductionCompany extends DataObject {
 		'Soundcloud' => 'Varchar(50)',
 		'Youtube' => 'Varchar(50)'
 	);
-	
+
 	static $summary_fields = array(
    		'Name',
 		'PrimaryPromoter'
    );
-   
+
 	static $has_one  = array(
 		'PromoImage' => 'OriginalImage'
    );
-	
+
 	static $has_many  = array(
 		'Events' => 'Event'
    );
-	
+
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 		return $fields;
 	}
-	
-	// function canCreate() {return true;} 
-	// function canEdit() {return true;} 
+
+	// function canCreate() {return true;}
+	// function canEdit() {return true;}
 	// function canDelete() {return true;}
 
 }

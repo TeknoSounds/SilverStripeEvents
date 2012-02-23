@@ -1,7 +1,7 @@
-<% require themedCSS(overrideforms) %> 
-<% require themedCSS(editartistpage) %> 
-<% require themedCSS(statusmessages) %> 
-<% require themedCSS(globaloverrides) %> 
+<% require themedCSS(overrideforms) %>
+<% require themedCSS(editartistpage) %>
+<% require themedCSS(statusmessages) %>
+<% require themedCSS(globaloverrides) %>
 
 <% if LoggedIn %>
 	<% if CanEditPost %>

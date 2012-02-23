@@ -56,21 +56,21 @@ class EditEventPage_Controller extends Page_Controller {
 			// new RequiredFields('Name','Date','Address','City')
 			new RequiredFields('Name', 'Date', 'Venue')
 		);
-		
+
 		$dateField->setConfig('showcalendar', true);
-		$dateField->setConfig('dateformat', 'mm/dd/YYYY'); 
-		
+		$dateField->setConfig('dateformat', 'mm/dd/YYYY');
+
 		$timeField->setConfig('timeformat', 'h:m a');
 		$timeField->setConfig('use_strtotime', true);
-		$timeField->setConfig('showdropdown',true); 
-		
+		$timeField->setConfig('showdropdown',true);
+
 		$endDateField->setConfig('showcalendar', true);
-		$endDateField->setConfig('dateformat', 'mm/dd/YYYY'); 
-		
+		$endDateField->setConfig('dateformat', 'mm/dd/YYYY');
+
 		$endTimeField->setConfig('timeformat', 'h:m a');
 		$endTimeField->setConfig('use_strtotime', true);
-		$endTimeField->setConfig('showdropdown',true); 
-		
+		$endTimeField->setConfig('showdropdown',true);
+
 		// Grab previous data if editing an existing DataObject
 		// URLParams can be visited at event/edit/#
 		if ($URLParams['ID']){
@@ -90,11 +90,11 @@ class EditEventPage_Controller extends Page_Controller {
 			$StateField->value = $event->State;
 			$OtherStateField->value = $event->OtherState;
 			$HeadlinerListField->value = $event->HeadlinerList;
-				
+
 			$eventLocalSupport = $event->OrderedLocalSupport();
 			foreach ($eventLocalSupport as $ls)
 				$LocalSupportListField->value .= $ls->Name . ';';
-				
+
 			$TicketLinkField->value = $event->TicketLink;
 			$RSPVLinkField->value = $event->RSPVLink;
 			$LastKnownPriceField->value = $event->LastKnownPrice;
@@ -106,18 +106,18 @@ class EditEventPage_Controller extends Page_Controller {
 			$EventGalleryField->value = $event->EventGallery;
 			$IDField->value = $thisID;
 		}
-		
+
 		if (true){
 				$form->fields->removeByName('Talkback');
 				$form->fields->removeByName('EventGallery');
 		}
 		return $form;
 	}
-	
+
 	public function edit($request){
 		return $this->renderWith(array('EditEventPage', 'Page'));
 	}
-	
+
 	public function show(){
 		$URLParams = Director::urlParams();
 		if ($URLParams['ID']){
@@ -130,17 +130,17 @@ class EditEventPage_Controller extends Page_Controller {
 	public function proper($str){
 		return ucwords(strtolower($str));
 	}
-	
+
 	public function repAssign($originalDO, $newDO, $field, $newValue){
 		$originalEvent = $originalDO->$field;
 		$newDO->$field = $newValue;
 		$repPoint = ($originalEvent != $newDO->$field);
 		return $repPoint;
 	}
-	
+
 	public function doSubmit($data, $form) {
 		include('../events/secure/def.inc');
-		
+
 		// Facebook Parse
 		$facebookURL = $data['FacebookEvent'];
 		eregi('facebook.com/events/(.*)/', $facebookURL, $facebookEID);
@@ -150,15 +150,15 @@ class EditEventPage_Controller extends Page_Controller {
 		} else {
 			$facebookEID = '-1';
 		}
-		
+
 		$eventName = Convert::raw2sql($data['Name']);
 		$facebookEID = Convert::raw2sql($facebookEID);
 		$existsByName = DataObject::get_one('Event', "`Name` = '{$eventName}'");
 		$existsByFB = DataObject::get_one('Event', "`FacebookEID` = '{$facebookEID}'") && strlen($facebookEID) > 0;
-		
+
 		// If this event does not exist neither by the same name nor the same FB event
 		// or we are editing an exisiting page, we will continue processing...
-		
+
 		// else we exit with a failure
 		if(!($existsByName || $existsByFB) || $data['ID']) {
 			// Event.*
@@ -167,7 +167,7 @@ class EditEventPage_Controller extends Page_Controller {
 				$event = DataObject::get_by_id('Event', $thisID);
 				$originalEvent = DataObject::get_by_id('Event', $thisID);
 				$theseMinorRepPoints = 0;
-				
+
 				$theseMinorRepPoints += self::repAssign($originalEvent, $event, 'FlyerLink', $data['FlyerLink']);
 				$theseMinorRepPoints += self::repAssign($originalEvent, $event, 'Name', $data['Name']);
 				$theseMinorRepPoints += self::repAssign($originalEvent, $event, 'Date', date('Y-m-d', strtotime($data['Date'])));
@@ -189,7 +189,7 @@ class EditEventPage_Controller extends Page_Controller {
 				$theseMinorRepPoints += self::repAssign($originalEvent, $event, 'LastKnownPrice', $data['LastKnownPrice']);
 				$theseMinorRepPoints += self::repAssign($originalEvent, $event, 'DoorPrice', $data['DoorPrice']);
 				$theseMinorRepPoints += self::repAssign($originalEvent, $event, 'Description', $data['Description']);
-				
+
 				// $event->Talkback = $data['Talkback'];
 				if (isset($data['EventGallery']))
 					$event->EventGallery = $data['EventGallery'];
@@ -205,10 +205,10 @@ class EditEventPage_Controller extends Page_Controller {
 				// Only do this later, not now since we need to pull the information!
 				// $event->Talkback = FacebookQuickAddPage::create_new_vb_thread($date, $name, $venue, $city, $state, $description);
 			}
-			
+
 			// Event.City
 			$event->OtherCity = self::proper($event->OtherCity);
-			
+
 			// Event.State
 			if ($event->State == 'Other'){
 				$tempState = '';
@@ -221,7 +221,7 @@ class EditEventPage_Controller extends Page_Controller {
 				}
 				$event->OtherState = $tempState;
 			}
-			
+
 			// Facebook Pull
 			$graphUrl = 'https://graph.facebook.com/' . $facebookEID . '&accessToken=' . $FBappID;
 			$response = @file_get_contents($graphUrl);
@@ -229,16 +229,16 @@ class EditEventPage_Controller extends Page_Controller {
 			if ($response && isset($data['FacebookPull'])){
 				$results = json_decode($response, true);
 				// If valid events page...
-				if (!isset($results['error']) && isset($results['location'])){	
+				if (!isset($results['error']) && isset($results['location'])){
 					// Facebook Save
 					$event->FacebookEID = $facebookEID;
-					
+
 					$event->Description = $results['description'];
-					
+
 					// Add facebook address if one does not exist
 					if (isset($results['venue']) && isset($results['venue']['street']) && strlen($event->Address))
 						$event->Address = self::proper($results['venue']['street']);
-						
+
 					// Add facebook flyer if one does not exist
 					if (strlen($event->FlyerLink) == 0){
 						$pictureGraphUrl = 'https://graph.facebook.com/' . $facebookEID . '&fields=picture&type=large&accessToken=' . $FBappID;
@@ -246,19 +246,19 @@ class EditEventPage_Controller extends Page_Controller {
 						$pictureResults = json_decode($response, true);
 						$event->FlyerLink = $pictureResults['picture'];
 					}
-					
+
 					// Overwrite Date and Time with Facebook Date and Time
 					$dateAndTime = $results['start_time'];
 					$event->Date = substr($dateAndTime, 0, strrpos($dateAndTime, 'T'));
 					$event->Time = substr($dateAndTime, strrpos($dateAndTime, 'T') + 1);
-					
+
 					// Overwrite Date and Time with Facebook Date and Time
 					$dateAndTime = $results['end_time'];
 					$event->EndDate = substr($dateAndTime, 0, strrpos($dateAndTime, 'T'));
 					$event->EndTime = substr($dateAndTime, strrpos($dateAndTime, 'T') + 1);
 				}
 			}
-			
+
 			// Credit user and write to DB
 			$username = Session::get('username');
 			if (DataObject::get_one('User', "`Name` = '{$username}'")){
@@ -270,7 +270,7 @@ class EditEventPage_Controller extends Page_Controller {
 				Director::redirect(Director::baseURL());
 				return;
 			}
-			
+
 			// Create Headliner list
 			$hlList = explode(';', trim(trim($data['HeadlinerList']), ';'));
 			$eventName = Convert::raw2sql($event->Name);
@@ -292,7 +292,7 @@ class EditEventPage_Controller extends Page_Controller {
 					$eventHeadliners->add(DataObject::get_one('Artist', "`Name` = '{$hlEscaped}'")->ID);
 				}
 			}
-			
+
 			// Create Local Support list
 			$lsList = explode(';', trim(trim($data['LocalSupportList']), ';'));
 			$eventName = Convert::raw2sql($event->Name);
@@ -311,7 +311,7 @@ class EditEventPage_Controller extends Page_Controller {
 					$eventLocalSupport->add(DataObject::get_one('Artist', "`Name` = '{$lsEscaped}'")->ID);
 				}
 			}
-			
+
 			$user = DataObject::get_one('User', "`Name` = '{$username}'");
 			$userMajorRep = count($user->Events());
 			$user->MajorRepPoints = $userMajorRep;
@@ -331,20 +331,20 @@ class EditEventPage_Controller extends Page_Controller {
 				Director::redirect(Director::baseURL(). $this->URLSegment . "/?success=1");
 			}
 		} else {
-			Director::redirect(Director::baseURL(). $this->URLSegment . "/?failure=1"); 
-		} 
+			Director::redirect(Director::baseURL(). $this->URLSegment . "/?failure=1");
+		}
 		return;
 	}
-	
+
 	public function UpdateSucccess() {
 		return isset($_REQUEST['update']) && $_REQUEST['update'] == "1";
-	} 
-	
+	}
+
 	public function Success() {
 		return isset($_REQUEST['success']) && $_REQUEST['success'] == "1";
-	} 
-	
+	}
+
 	public function Duplicate() {
 		return isset($_REQUEST['failure']) && $_REQUEST['failure'] == "1";
-	} 
+	}
 }

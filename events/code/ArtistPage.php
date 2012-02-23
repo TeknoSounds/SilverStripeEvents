@@ -40,7 +40,7 @@ class ArtistPage_Controller extends Page_Controller {
 			// new RequiredFields('Name','Date','Address','City')
 			new RequiredFields('Name', 'Date', 'Venue')
 		);
-		
+
 		// Grab previous data if editing an existing DataObject
 		// URLParams can be visited at artist/edit/#
 		if ($URLParams['ID']){
@@ -67,7 +67,7 @@ class ArtistPage_Controller extends Page_Controller {
 	public function edit($request){
 		return $this->renderWith(array('EditArtistPage', 'Page'));
 	}
-	
+
 	public function show(){
 		$URLParams = Director::urlParams();
 		if ($URLParams['ID']){
@@ -76,20 +76,20 @@ class ArtistPage_Controller extends Page_Controller {
 			return $this->customise($artist)->renderWith(array('ArtistPage','Page'));
 		}
 	}
-	
+
 	public function repAssign($originalDO, $newDO, $field, $newValue){
 		$originalArtist = $originalDO->$field;
 		$newDO->$field = $newValue;
 		$repPoint = ($originalArtist != $newDO->$field);
 		return $repPoint;
 	}
-	
+
 	public function doSubmit($data, $form) {
 		if ($data['ID']){
 			$thisID = Convert::raw2sql($data['ID']);
 			$artist = DataObject::get_by_id('Artist', $thisID);
 			$originalArtist = DataObject::get_by_id('Artist', $thisID);
-			
+
 			$theseMinorRepPoints = 0;
 			$theseMinorRepPoints += self::repAssign($originalArtist, $artist, 'ImageLink', $data['ImageLink']);
 			$theseMinorRepPoints += self::repAssign($originalArtist, $artist, 'Name', $data['Name']);
@@ -103,7 +103,7 @@ class ArtistPage_Controller extends Page_Controller {
 			$theseMinorRepPoints += self::repAssign($originalArtist, $artist, 'Myspace', $data['Myspace']);
 			$theseMinorRepPoints += self::repAssign($originalArtist, $artist, 'OfficialYoutube', $data['OfficialYoutube']);
 			$theseMinorRepPoints += self::repAssign($originalArtist, $artist, 'GenreList', $data['GenreList']);
-			
+
 			// Check User
 			$username = Session::get('username');
 			if (DataObject::get_one('User', "`Name` = '{$username}'")){
@@ -113,7 +113,7 @@ class ArtistPage_Controller extends Page_Controller {
 				Director::redirect(Director::baseURL());
 				return;
 			}
-			
+
 			$user = DataObject::get_one('User', "`Name` = '{$username}'");
 			$userMajorRep = count($user->Events());
 			$user->MajorRepPoints = $userMajorRep;
@@ -126,10 +126,10 @@ class ArtistPage_Controller extends Page_Controller {
 			}
 		}
 	}
-	
+
 	public function UpdateSucccess() {
 		return isset($_REQUEST['update']) && $_REQUEST['update'] == "1";
-	} 
-	
+	}
+
 
 }

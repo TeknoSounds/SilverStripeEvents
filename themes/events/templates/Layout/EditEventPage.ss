@@ -1,7 +1,7 @@
-<% require themedCSS(overrideforms) %> 
-<% require themedCSS(editeventpage) %> 
-<% require themedCSS(statusmessages) %> 
-<% require themedCSS(globaloverrides) %> 
+<% require themedCSS(overrideforms) %>
+<% require themedCSS(editeventpage) %>
+<% require themedCSS(statusmessages) %>
+<% require themedCSS(globaloverrides) %>
 
 <% if Success %>
 	<p id="SuccessfulBigger">Thanks for creating another event listing on Teknosounds! Your rep just went up!</p>
@@ -39,7 +39,7 @@
 			});
 
 			$('#Form_EventForm_Name').focus();
-			
+
 			if ($('#Form_EventForm_Date').val() == '')
 				$('#Time').hide();
 			if ($('#Form_EventForm_EndDate').val() == '')
@@ -50,7 +50,7 @@
 				$('#OtherState').hide();
 			if ($('#Form_EventForm_LastKnownPrice').val() == '')
 				$('#DoorPrice').hide();
-				
+
 			$("#Form_EventForm_Date").focus( function() {
 				$(this).click();
 			});

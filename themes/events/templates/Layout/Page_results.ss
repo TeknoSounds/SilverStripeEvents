@@ -40,7 +40,7 @@
 	          <% end_if %>
 	        <% end_control %>
 	      </span>
-      
+
 	    </div>
 	 <% end_if %>
 </div>

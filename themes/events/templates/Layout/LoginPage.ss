@@ -1,6 +1,6 @@
-<% require themedCSS(loginpage) %> 
-<% require themedCSS(statusmessages) %> 
-<% require themedCSS(globaloverrides) %> 
+<% require themedCSS(loginpage) %>
+<% require themedCSS(statusmessages) %>
+<% require themedCSS(globaloverrides) %>
 
 <% if LoggedIn %>
 	<p id="SuccessfulBigger">Login Successful</p>

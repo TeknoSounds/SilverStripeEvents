@@ -1,6 +1,6 @@
-<% require themedCSS(fbquickaddpage) %> 
-<% require themedCSS(statusmessages) %> 
-<% require themedCSS(globaloverrides) %> 
+<% require themedCSS(fbquickaddpage) %>
+<% require themedCSS(statusmessages) %>
+<% require themedCSS(globaloverrides) %>
 
 <% if Success %>
 	<p id="SuccessfulBigger">Thanks for creating another event listing on Teknosounds! Your rep just went up by 1!</p>
@@ -23,9 +23,9 @@
 
 <script type="text/javascript">
 	document.getElementById("Form_NewEventForm_FacebookEvent").focus();
-	
+
 	ctrlDown = false;
-	
+
 	processKeyUp = function(event)
 	{
 		// MSIE hack
@@ -36,7 +36,7 @@
 		if (event.keyCode == 17 || event.keyCode == 91)
 			ctrlDown = false;
 	};
-	
+
 	processKeyDown = function(event)
 	{
 		// MSIE hack
@@ -45,7 +45,7 @@
 		if (event.keyCode == 17 || event.keyCode == 91)
 			ctrlDown = true;
 	};
-	
+
 	document.getElementById("Form_NewEventForm_FacebookEvent").onkeyup=processKeyUp;
 	document.getElementById("Form_NewEventForm_FacebookEvent").onkeydown=processKeyDown;
 </script>

@@ -1,144 +1,162 @@
-#ExpandLink{
-	text-align:center;
-	margin:auto;
-	cursor: pointer;
+.ExpandLink{
+    cursor: pointer;
+    color: black;
+}
+
+.Expanded{
+    cursor: default;
+    color:blue;
+    text-transform:uppercase;
 }
 
 .EventsList{
-	
+
 }
 
 .EventHolder{
-	padding-bottom:10px;
-	overflow:hidden;
-	float:left;
-	width:100%;
+    padding-bottom:10px;
+    overflow:hidden;
+    float:left;
+    width:100%;
 }
 
 .TimeDateBar{
-	background-color: #999;
-	min-height: 16px;
-	padding: 2px;
-	color:white;
-	float: left;
-	width: 100%;
+    background-color: #999;
+    min-height: 16px;
+    padding: 2px;
+    color:white;
+    float: left;
+    width: 100%;
 }
 
 .BarInfo{
-	float:left;
-	width: 98.5%;
+    float:left;
+    width: 98.5%;
 }
 
 .EditLink{
-	float:left;
-	width: 2em;
+    float:left;
+    width: 2em;
 }
 .Month{
-	float:left;
-	width: 3em;
+    float:left;
+    width: 3em;
 }
 
 .Day{
-	float:left;
-	width: 5em;
+    float:left;
+    width: 5em;
 }
 
 .Title{
-	float:left;
-	width: 250px;
+    float:left;
+    width: 250px;
 }
 
 .HeadlinerList{
-	float:left;
-	width:200px;
+    float:left;
+    width:200px;
 }
 
 .Venue{
-	float:right;
-	text-align: right;
+    float:right;
+    text-align: right;
 }
 
 .ShareContainer{
-	padding-right: 10px;
+    padding-right: 10px;
 }
 
 .Share{
-	float:right;
-	padding-right: 5px;
-	padding-left: 5px;
+    float:right;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .ClearFloats{
-	clear:both;
-	height: 0;
+    clear:both;
+    height: 0;
     overflow: hidden;
 
 }
 
 .EventsList{
-	padding-bottom:10px;
+    padding-bottom:10px;
 }
 
 .UserHolder{
-	
+
 }
 
 /* Start of Column CSS */
 .container4 {
-	clear:left;
-	float:left;
-	width:100%;
-	overflow:hidden;
-	background-color:#ccc;
+    clear:left;
+    float:left;
+    width:100%;
+    overflow:hidden;
+    background-color:#ccc;
 }
 .container3 {
-	clear:left;
-	float:left;
-	width:100%;
-	position:relative;
-	right:25%;
-	background-color:#fff;
+    clear:left;
+    float:left;
+    width:100%;
+    position:relative;
+    right:25%;
+    background-color:#fff;
 }
 .container2 {
-	clear:left;
-	float:left;
-	width:100%;
-	position:relative;
-	right:25%;
-	background-color:#ccc;
+    clear:left;
+    float:left;
+    width:100%;
+    position:relative;
+    right:25%;
+    background-color:#ccc;
 }
 .container1 {
-	float:left;
-	width:100%;
-	position:relative;
-	right:25%;
-	background-color:#fff;
+    float:left;
+    width:100%;
+    position:relative;
+    right:25%;
+    background-color:#fff;
 }
 .col1 {
-	float:left;
-	width:21%;
-	position:relative;
-	left:77%;
-	overflow:hidden;
+    float:left;
+    width:21%;
+    position:relative;
+    left:77%;
+    overflow:hidden;
 }
 .col2 {
-	float:left;
-	width:21%;
-	position:relative;
-	left:81%;
-	overflow:hidden;
+    float:left;
+    width:21%;
+    position:relative;
+    left:81%;
+    overflow:hidden;
 }
 .col3 {
-	float:left;
-	width:21%;
-	position:relative;
-	left:85%;
-	overflow:hidden;
+    float:left;
+    width:21%;
+    position:relative;
+    left:85%;
+    overflow:hidden;
 }
 .col4 {
-	float:left;
-	width:21%;
-	position:relative;
-	left:89%;
-	overflow:hidden;
+    float:left;
+    width:21%;
+    position:relative;
+    left:89%;
+    overflow:hidden;
+}
+
+
+#floatsidebar{
+    position:absolute;
+    width:200px;height:50px;left:10px;
+    padding:16px;background:#FFFFFF;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    border:2px solid #2266AA;
+    color:red;
+    font-weight:normal;
+    z-index:100
 }

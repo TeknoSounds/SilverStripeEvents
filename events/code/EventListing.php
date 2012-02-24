@@ -7,10 +7,11 @@ class EventListing extends Page {
 class EventListing_Controller extends Page_Controller {
 
     function Events(){
+        // Return all events that happened at least 8 hours ago
         $date = new DateTime("now");
         $date->modify('-8 hours');
         $today = $date->format('Y-m-d');
-        return DataObject::get("Event", "Date >= '{$today}' AND Duplicate <> TRUE", "Date, Time, Name");
+        return DataObject::get("Event", "Date >= '{$today}' AND Duplicate <> TRUE", "Date, Time, Name, City, OtherCity");
     }
 
     function Users(){
@@ -18,10 +19,23 @@ class EventListing_Controller extends Page_Controller {
     }
 
     function Cities(){
-        $date = new DateTime("now");
-        $date->modify('-8 hours');
-        $today = $date->format('Y-m-d');
-        return DataObject::get("Event", "Date >= '{$today}' AND Duplicate <> TRUE", "City, OtherCity");
+        // Get all events on this page
+        $events = self::Events();
+
+        $result = array();
+        foreach ($events as $event) {
+            // Read the city of each event
+            $city = ($event->OtherCity) ? ($event->OtherCity) : ($event->City);
+            $cityObject = array('City' => $city);
+
+            // If the city is not in result object,
+            if (!in_array($cityObject, $result)){
+                // add city
+                array_push($result, $cityObject);
+            }
+        }
+
+        return new DataObjectSet($result);
     }
 
 }

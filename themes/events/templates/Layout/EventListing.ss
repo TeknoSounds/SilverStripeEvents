@@ -1,14 +1,7 @@
 <% require themedCSS(eventlisting) %>
 <% require themedCSS(globaloverrides) %>
 
-<% control Cities %>
-    $City<br/>
-<% end_control %>
-<div id="ExpandLink">
-    Expand All
-</div>
-
- <% if false %>
+<% if false %>
 <div class="EventsList">
     <% control Users %>
         <div class="UserHolder">
@@ -57,13 +50,13 @@
                             $Venue,<br/>
                             <% if OtherCity %>
                                  $OtherCity
-                            <% else  %>
+                            <% else %>
                                  $City
                             <% end_if %>
                         </div>
                     </div>
                 </div>
-                <div class="container4">
+                <div class="container4 <% if OtherCity %> $OtherCity <% else %> $City <% end_if %> ">
                     <div class="container3">
                         <div class="container2">
                             <div class="container1">
@@ -195,17 +188,15 @@
         </div>
     <% end_control %>
 </div>
-<div id="floatdiv" style="
-    position:absolute;
-    width:200px;height:50px;left:10px;
-    padding:16px;background:#FFFFFF;
-    opacity:0.4;
-    filter:alpha(opacity=40); /* For IE8 and earlier */
-    border:2px solid #2266AA;
-    color:red;
-    font-weight:normal;
-    z-index:100">
-This is a floating javascript menu.
+<div id="floatsidebar">
+    <% control Cities %>
+        <div id="Expand_$City" class="ExpandLink">
+            $City<br/>
+        </div>
+    <% end_control %>
+    <div id="ExpandAll" class="ExpandLink">
+        All
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -235,18 +226,38 @@ This is a floating javascript menu.
 <script type="text/javascript">
     (function($) {
         $(document).ready(function(){
+            // Begin by hiding everything
             $('.container4').hide();
-            expanded = false;
-            $('#ExpandLink').click(function() {
-                if (!expanded){
-                    $('.container4').show();
+
+            // On each expanding click, hide all and reset text
+            $('.ExpandLink').click(function() {
+                $('#ExpandAll').text('All');
+                $('#ExpandAll').removeClass('Expanded');
+                <% control Cities %>
+                    $('#Expand_$City').text('$City');
+                    $('#Expand_$City').removeClass('Expanded');
+                <% end_control %>
+                $('.container4').hide();
+                $('.HeadlinerList').show();
+            });
+
+            // Expand the cities
+            <% control Cities %>
+                $('#Expand_$City').click(function() {
+                    $('.$City').show();
                     $('.HeadlinerList').hide();
-                    expanded = true;
-                } else {
-                    $('.container4').hide();
-                    $('.HeadlinerList').show();
-                    expanded = false;
-                }
+                    expanded_$City = true;
+                    $('#Expand_$City').text('[$City]');
+                    $('#Expand_$City').addClass('Expanded');
+                });
+            <% end_control %>
+
+            // Expand all events
+            $('#ExpandAll').click(function() {
+                $('.container4').show();
+                $('.HeadlinerList').hide();
+                $('#ExpandAll').text('[All]');
+                $('#ExpandAll').addClass('Expanded');
             });
         })
     })(jQuery);

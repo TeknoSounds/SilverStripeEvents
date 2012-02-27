@@ -133,10 +133,11 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
                 if (isset($results['venue']) && isset($results['venue']['city'])){
                     if (in_array(self::proper($results['venue']['city']), singleton('Event')->dbObject('City')->enumValues())){
                         $event->City = self::proper($results['venue']['city']);
+                        $city = $event->City;
                     } else {
                         $event->OtherCity = self::proper($results['venue']['city']);
+                        $city = $event->OtherCity;
                     }
-                    $city = self::proper($results['venue']['city']);
                 }
 
                 // Event.State

@@ -99,7 +99,7 @@
                                         <a href="http://www.facebook.com/events/{$FacebookEID}"><h3>Facebook</h3></a>
                                     <% end_if %>
                                     <% if Talkback %>
-                                        <a href="http://dev.teknosounds.com/messageboard/showthread.php/{$Talkback}"><h3>Talkback</h3></a>
+                                        <a href="http://teknosounds.com/messageboard/showthread.php/{$Talkback}"><h3>Talkback</h3></a>
                                     <% end_if %>
                                     <% if EventGallery %>
                                         <a href="{$EventGallery}"><h3>Event Gallery</h3></a>

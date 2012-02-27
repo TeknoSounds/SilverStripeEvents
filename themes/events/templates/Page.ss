@@ -23,11 +23,13 @@
 <body>
     <div id="BgContainer">
         <div id="Container">
-            <div id="Header">
-                $SearchForm
-                <h1>$SiteConfig.Title</h1>
-                <p>$SiteConfig.Tagline</p>
-            </div>
+            <a href="http://events.teknosounds.com">
+                <div id="Header">
+                    $SearchForm
+                    <h1>$SiteConfig.Title</h1>
+                    <p>$SiteConfig.Tagline</p>
+                </div>
+            </a>
 
             <div id="TopBanner">
                 <% include TopBanner %>

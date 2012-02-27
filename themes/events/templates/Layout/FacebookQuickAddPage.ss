@@ -25,27 +25,11 @@
     document.getElementById("Form_NewEventForm_FacebookEvent").focus();
 
     ctrlDown = false;
-
-    processKeyUp = function(event)
-    {
-        // MSIE hack
-        if (window.event)
-            event = window.event;
-        if (ctrlDown && event.keyCode == 86)
-            document.getElementById("Form_NewEventForm").submit();
-        if (event.keyCode == 17 || event.keyCode == 91)
-            ctrlDown = false;
-    };
-
-    processKeyDown = function(event)
-    {
-        // MSIE hack
-        if (window.event)
-            event = window.event;
-        if (event.keyCode == 17 || event.keyCode == 91)
-            ctrlDown = true;
-    };
-
-    document.getElementById("Form_NewEventForm_FacebookEvent").onkeyup=processKeyUp;
-    document.getElementById("Form_NewEventForm_FacebookEvent").onkeydown=processKeyDown;
+    (function($) {
+        $(document).ready(function(){
+            $('#Form_NewEventForm').bind('paste', null, function() {
+                $('#Form_NewEventForm').submit();
+            });
+        })
+    })(jQuery);
 </script>

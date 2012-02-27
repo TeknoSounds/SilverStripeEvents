@@ -10,7 +10,7 @@ class Event extends DataObject {
         'EndTime' => 'Time',
         'Venue' => 'Varchar(50)',
         'Address' => 'Varchar(50)',
-        'City' => "Enum('Austin, Dallas, Houston, San Antonio, Other', 'Austin')",
+        'City' => "Enum('Austin, Dallas, Houston, San Antonio, Other, TBA', 'TBA')",
         'OtherCity' => 'Varchar(20)',
         'State' => "Enum('TX, Other', 'TX')",
         'OtherState' => 'Varchar(20)',

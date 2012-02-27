@@ -121,7 +121,7 @@
     <% if Talkback %>
         <div id="Talkback" class="clear">
             <div id="Title">Talkback</div>
-            <div id="Value"><a href="http://dev.teknosounds.com/messageboard/showthread.php/{$Talkback}">Link</a></div>
+            <div id="Value"><a href="http://teknosounds.com/messageboard/showthread.php/{$Talkback}">Link</a></div>
         </div>
     <% end_if %>
     <% if Headliners %>

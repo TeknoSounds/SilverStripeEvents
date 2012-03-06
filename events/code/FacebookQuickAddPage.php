@@ -129,7 +129,7 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
                 $event->EndTime = substr($dateAndTime, strrpos($dateAndTime, 'T') + 1);
 
                 // Event.City
-                $city = '';
+                $city = 'TBA';
                 if (isset($results['venue']) && isset($results['venue']['city'])){
                     if (in_array(self::proper($results['venue']['city']), singleton('Event')->dbObject('City')->enumValues())){
                         $event->City = self::proper($results['venue']['city']);

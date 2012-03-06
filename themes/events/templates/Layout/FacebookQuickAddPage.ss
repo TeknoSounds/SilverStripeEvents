@@ -24,7 +24,6 @@
 <script type="text/javascript">
     document.getElementById("Form_NewEventForm_FacebookEvent").focus();
 
-    ctrlDown = false;
     (function($) {
         $(document).ready(function(){
             $('#Form_NewEventForm').bind('paste', null, function() {

@@ -26,11 +26,12 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
         return ucwords(strtolower($str));
     }
 
-    public function create_new_vb_thread($date, $name, $venue, $city, $state, $description) {
+    public function create_new_vb_thread($threadid, $date, $name, $venue, $city, $state, $description) {
         include('../events/secure/def.inc');
         //set POST variables
         $url = 'http://teknosounds.com/messageboard/create_thread.php';
         $fields = array(
+                    'threadid'=>urlencode($threadid),
                     'date'=>urlencode($date),
                     'name'=>urlencode($name),
                     'venue'=>urlencode($venue),
@@ -168,7 +169,7 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
                     $event->UserID = $user->ID;
 
                     //Info gathered for VB Thread, create
-                    $event->Talkback = self::create_new_vb_thread($event->Date, $event->Name, $event->Venue, $city, $state, $event->Description);
+                    $event->Talkback = self::create_new_vb_thread(-1, $event->Date, $event->Name, $event->Venue, $city, $state, $event->Description);
 
                     $event->write();
                     $userMajorRep = count($user->Events());

@@ -138,6 +138,45 @@ class EditEventPage_Controller extends Page_Controller {
         return $repPoint;
     }
 
+    public function create_new_vb_thread($threadid, $date, $name, $venue, $city, $state, $description) {
+        include('../events/secure/def.inc');
+        //set POST variables
+        $url = 'http://teknosounds.com/messageboard/create_thread.php';
+        $fields = array(
+                    'threadid'=>urlencode($threadid),
+                    'date'=>urlencode($date),
+                    'name'=>urlencode($name),
+                    'venue'=>urlencode($venue),
+                    'city'=>urlencode($city),
+                    'state'=>urlencode($state),
+                    'description'=>urlencode($description),
+                    'secret_key'=>urlencode($vb_secret_key)
+                );
+
+        //url-ify the data for the POST
+        $fields_string = '';
+        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        rtrim($fields_string,'&');
+
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL,$url);
+        curl_setopt($ch,CURLOPT_POST,count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS,$fields_string);
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+
+        //execute post
+        $result = curl_exec($ch);
+        $threadID = $result;
+
+        //close connection
+        curl_close($ch);
+
+        return $threadID;
+    }
+
     public function doSubmit($data, $form) {
         include('../events/secure/def.inc');
 
@@ -201,9 +240,6 @@ class EditEventPage_Controller extends Page_Controller {
                 $event->EndDate = date('Y-m-d', strtotime($data['EndDate']));
                 if ($data['EndTime'])
                     $event->EndTime = date('H:i:s', strtotime($data['EndTime']));
-
-                // Only do this later, not now since we need to pull the information!
-                // $event->Talkback = FacebookQuickAddPage::create_new_vb_thread($date, $name, $venue, $city, $state, $description);
             }
 
             // Event.City
@@ -258,6 +294,8 @@ class EditEventPage_Controller extends Page_Controller {
                     $event->EndTime = substr($dateAndTime, strrpos($dateAndTime, 'T') + 1);
                 }
             }
+
+            self::create_new_vb_thread($event->Talkback, $event->Date, $event->Name, $event->Venue, $event->City, $event->State, $event->Description);
 
             // Credit user and write to DB
             $username = Session::get('username');

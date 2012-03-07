@@ -58,14 +58,14 @@ class EditEventPage_Controller extends Page_Controller {
         );
 
         $dateField->setConfig('showcalendar', true);
-        $dateField->setConfig('dateformat', 'mm/dd/YYYY');
+        // $dateField->setConfig('dateformat', 'mm/dd/YYYY');
 
         $timeField->setConfig('timeformat', 'h:m a');
         $timeField->setConfig('use_strtotime', true);
         $timeField->setConfig('showdropdown',true);
 
         $endDateField->setConfig('showcalendar', true);
-        $endDateField->setConfig('dateformat', 'mm/dd/YYYY');
+        // $endDateField->setConfig('dateformat', 'mm/dd/YYYY');
 
         $endTimeField->setConfig('timeformat', 'h:m a');
         $endTimeField->setConfig('use_strtotime', true);
@@ -182,7 +182,7 @@ class EditEventPage_Controller extends Page_Controller {
 
         // Facebook Parse
         $facebookURL = $data['FacebookEvent'];
-        eregi('facebook.com/events/(.*)/', $facebookURL, $facebookEID);
+        eregi('facebook.com/events/(.*)(/*)', $facebookURL, $facebookEID);
         // Set the EID accordingly, -1 if we didn't get one out
         if (count($facebookEID) > 0){
             $facebookEID = $facebookEID[1];

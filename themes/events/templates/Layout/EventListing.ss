@@ -62,7 +62,7 @@
                             <div class="container1">
                                 <div class="col1">
                                     <% if FlyerImage %>
-                                        <a href="{$FlyerImage.URL}"><img src="{$FlyerImage.EventListingImage.Link}"/></a>
+                                        <a href="event/show/{$ID}"><img src="{$FlyerImage.EventListingImage.Link}"/></a>
                                     <% end_if %>
                                     &nbsp;
                                 </div>
@@ -99,7 +99,7 @@
                                         <a href="http://www.facebook.com/events/{$FacebookEID}"><h3>Facebook</h3></a>
                                     <% end_if %>
                                     <% if Talkback %>
-                                        <a href="http://teknosounds.com/messageboard/showthread.php/{$Talkback}"><h3>Talkback</h3></a>
+                                        <a href="http://teknosounds.com/messageboard/showthread.php/{$Talkback}"><h3>Forum Thread</h3></a>
                                     <% end_if %>
                                     <% if EventGallery %>
                                         <a href="{$EventGallery}"><h3>Event Gallery</h3></a>
@@ -198,36 +198,13 @@
         All
     </div>
 </div>
-
-<script type="text/javascript">
-    floatingMenu.add('floatdiv',
-        {
-            // Represents distance from left or right browser window
-            // border depending upon property used. Only one should be
-            // specified.
-            targetLeft: 10,
-            // targetRight: 10,
-
-            // Represents distance from top or bottom browser window
-            // border depending upon property used. Only one should be
-            // specified.
-            // targetTop: 10,
-            // targetBottom: 0,
-
-            // Uncomment one of those if you need centering on
-            // X- or Y- axis.
-            // centerX: true,
-            centerY: true,
-
-            // Remove this one if you don't want snap effect
-            snap: true
-        });
-</script>
 <script type="text/javascript">
     (function($) {
         $(document).ready(function(){
-            // Begin by hiding everything
-            $('.container4').hide();
+            // Begin by showing everything
+            $('.container4').show();
+            $('#ExpandAll').text('[All]');
+            $('#ExpandAll').addClass('Expanded');
 
             // On each expanding click, hide all and reset text
             $('.ExpandLink').click(function() {

@@ -1,6 +1,8 @@
 <?php
-class OriginalImage extends Image {
-   function generateEventListingImage($gd) {
-      return $gd->resizeRatio(100,200);
-   }
-}
+    class OriginalImage extends Image {
+        function generateEventListingImage($gd) {
+            try {
+                return $gd->resizeRatio(100,200);
+            } catch (Exception $e) {}
+        }
+    }

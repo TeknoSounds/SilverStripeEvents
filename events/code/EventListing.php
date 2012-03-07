@@ -26,7 +26,10 @@ class EventListing_Controller extends Page_Controller {
         foreach ($events as $event) {
             // Read the city of each event
             $city = ($event->OtherCity) ? ($event->OtherCity) : ($event->City);
-            $cityObject = array('City' => $city);
+            $fullCity = $city;
+            $city = explode(' ', $city);
+            $city = $city[0];
+            $cityObject = array('ShortCity' => $city, 'FullCity' => $fullCity);
 
             // If the city is not in result object,
             if (!in_array($cityObject, $result)){

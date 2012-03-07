@@ -190,8 +190,8 @@
 </div>
 <div id="floatsidebar">
     <% control Cities %>
-        <div id="Expand_$City" class="ExpandLink">
-            $City<br/>
+        <div id="Expand_$ShortCity" class="ExpandLink">
+            $FullCity<br/>
         </div>
     <% end_control %>
     <div id="ExpandAll" class="ExpandLink">
@@ -211,28 +211,24 @@
                 $('#ExpandAll').text('All');
                 $('#ExpandAll').removeClass('Expanded');
                 <% control Cities %>
-                    $('#Expand_$City').text('$City');
-                    $('#Expand_$City').removeClass('Expanded');
+                    $('#Expand_$ShortCity').text('$FullCity');
+                    $('#Expand_$ShortCity').removeClass('Expanded');
                 <% end_control %>
                 $('.container4').hide();
-                $('.HeadlinerList').show();
             });
 
             // Expand the cities
             <% control Cities %>
-                $('#Expand_$City').click(function() {
-                    $('.$City').show();
-                    $('.HeadlinerList').hide();
-                    expanded_$City = true;
-                    $('#Expand_$City').text('[$City]');
-                    $('#Expand_$City').addClass('Expanded');
+                $('#Expand_$ShortCity').click(function() {
+                    $('.$ShortCity').show();
+                    $('#Expand_$ShortCity').text('[$FullCity]');
+                    $('#Expand_$ShortCity').addClass('Expanded');
                 });
             <% end_control %>
 
             // Expand all events
             $('#ExpandAll').click(function() {
                 $('.container4').show();
-                $('.HeadlinerList').hide();
                 $('#ExpandAll').text('[All]');
                 $('#ExpandAll').addClass('Expanded');
             });

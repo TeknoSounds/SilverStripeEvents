@@ -98,12 +98,13 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
 
             $results = json_decode($response, true);
             // If valid events page...
-            if (!isset($results['error']) && isset($results['location'])){
+            if (!isset($results['error'])){
 
                 // Event.*
                 $form->saveInto($event = new Event());
                 $event->Name = self::proper($results['name']);
-                $event->Venue = self::proper($results['location']);
+                if (isset($results['location']))
+                    $event->Venue = self::proper($results['location']);
                 if (isset($results['venue']) && isset($results['venue']['street']))
                     $event->Address = self::proper($results['venue']['street']);
                 $event->FacebookEID = $facebookEID;
@@ -130,7 +131,7 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
                 $event->EndTime = substr($dateAndTime, strrpos($dateAndTime, 'T') + 1);
 
                 // Event.City
-                $city = 'TBA';
+                $city = 'To Be Modded';
                 if (isset($results['venue']) && isset($results['venue']['city'])){
                     if (in_array(self::proper($results['venue']['city']), singleton('Event')->dbObject('City')->enumValues())){
                         $event->City = self::proper($results['venue']['city']);

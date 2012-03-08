@@ -47,7 +47,7 @@
                             <% end_control %>
                         </div>
                         <div class="Venue">
-                            $Venue,<br/>
+                            <% if Venue %>$Venue<% else %>TBA<% end_if %>,<br/>
                             <% if OtherCity %>
                                  $OtherCity
                             <% else %>

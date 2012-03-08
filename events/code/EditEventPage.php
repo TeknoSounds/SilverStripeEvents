@@ -86,7 +86,11 @@ class EditEventPage_Controller extends Page_Controller {
             $VenueField->value = $event->Venue;
             $AddressField->value = $event->Address;
             $CityField->value = $event->City;
-            $OtherCityField->value = $event->OtherCity;
+            if ($CityField->value == 'Other'){
+                $OtherCityField->value = $event->OtherCity;
+            } else {
+                $OtherCityField->value = '';
+            }
             $StateField->value = $event->State;
             $OtherStateField->value = $event->OtherState;
             $HeadlinerListField->value = $event->HeadlinerList;

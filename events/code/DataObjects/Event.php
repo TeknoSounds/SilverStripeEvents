@@ -118,6 +118,14 @@ class Event extends DataObject {
         parent::onBeforeWrite();
     }
 
+    public function UnderscoredCity(){
+        if ($this->OtherCity) {
+            return str_replace(' ', '_', $this->OtherCity);
+        } else {
+            return str_replace(' ', '_', $this->City);
+        }
+    }
+
     public function OrderedHeadliners(){
         $orderedList = array();
         $hlList = explode(';', trim(trim($this->HeadlinerList), ';'));

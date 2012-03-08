@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container4 <% if OtherCity %> $OtherCity <% else %> $City <% end_if %> ">
+                <div class="container4 $UnderscoredCity ">
                     <div class="container3">
                         <div class="container2">
                             <div class="container1">
@@ -190,8 +190,8 @@
 </div>
 <div id="floatsidebar">
     <% control Cities %>
-        <div id="Expand_$ShortCity" class="ExpandLink">
-            $FullCity<br/>
+        <div id="Expand_$UnderscoredCity" class="ExpandLink">
+            $City<br/>
         </div>
     <% end_control %>
     <div id="ExpandAll" class="ExpandLink">
@@ -203,34 +203,29 @@
         $(document).ready(function(){
             // Begin by showing everything
             $('.container4').show();
-            $('#ExpandAll').text('[All]');
-            $('#ExpandAll').addClass('Expanded');
+            $('#ExpandAll').text('[All]').addClass('Expanded');
 
             // On each expanding click, hide all and reset text
             $('.ExpandLink').click(function() {
-                $('#ExpandAll').text('All');
-                $('#ExpandAll').removeClass('Expanded');
+                $('#ExpandAll').text('All').removeClass('Expanded');
                 <% control Cities %>
-                    $('#Expand_$ShortCity').text('$FullCity');
-                    $('#Expand_$ShortCity').removeClass('Expanded');
+                    $('#Expand_$UnderscoredCity').text('$City').removeClass('Expanded');
                 <% end_control %>
                 $('.container4').hide();
             });
 
             // Expand the cities
             <% control Cities %>
-                $('#Expand_$ShortCity').click(function() {
-                    $('.$ShortCity').show();
-                    $('#Expand_$ShortCity').text('[$FullCity]');
-                    $('#Expand_$ShortCity').addClass('Expanded');
+                $('#Expand_$UnderscoredCity').click(function() {
+                    $('.$UnderscoredCity').show();
+                    $('#Expand_$UnderscoredCity').text('[$City]').addClass('Expanded');
                 });
             <% end_control %>
 
             // Expand all events
             $('#ExpandAll').click(function() {
                 $('.container4').show();
-                $('#ExpandAll').text('[All]');
-                $('#ExpandAll').addClass('Expanded');
+                $('#ExpandAll').text('[All]').addClass('Expanded');
             });
         })
     })(jQuery);

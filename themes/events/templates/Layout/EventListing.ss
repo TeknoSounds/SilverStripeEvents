@@ -15,7 +15,7 @@
     <% control Events %>
         <div class="EventHolder">
                     <a name="{$ID}"></a>
-                <div class="TimeDateBar">
+                <div class="TimeDateBar" id="{$ID}">
                     <div class="BarInfo">
                         <% if top.CanEditPost %>
                             <div class="EditLink">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container4 $UnderscoredCity ">
+                <div class="container4 $UnderscoredCity" id="{$ID}_details">
                     <div class="container3">
                         <div class="container2">
                             <div class="container1">
@@ -189,18 +189,38 @@
     <% end_control %>
 </div>
 <div id="floatsidebar">
+    <div id="Expand_header">
+        Expand:
+    </div>
     <% control Cities %>
         <div id="Expand_$UnderscoredCity" class="ExpandLink">
             $City<br/>
         </div>
     <% end_control %>
+    <br/>
     <div id="ExpandAll" class="ExpandLink">
         All
+    </div>
+    <div id="CollapseAll" class="ExpandLink">
+        Collapse All
     </div>
 </div>
 <script type="text/javascript">
     (function($) {
         $(document).ready(function(){
+            // SINGLE EXPANSION CODE
+
+            $('.TimeDateBar').click(function() {
+                if ($('#' + this.id + '_details').css('display') == "none")
+                    $('#' + this.id + '_details').show();
+                else
+                    $('#' + this.id + '_details').hide();
+            });
+
+
+
+            // EXPANDING CODE
+
             // Begin by showing everything
             $('.container4').show();
             $('#ExpandAll').text('[All]').addClass('Expanded');
@@ -211,6 +231,7 @@
                 <% control Cities %>
                     $('#Expand_$UnderscoredCity').text('$City').removeClass('Expanded');
                 <% end_control %>
+                $('#CollapseAll').text('Collapse All').removeClass('Expanded');
                 $('.container4').hide();
             });
 
@@ -226,6 +247,12 @@
             $('#ExpandAll').click(function() {
                 $('.container4').show();
                 $('#ExpandAll').text('[All]').addClass('Expanded');
+            });
+
+            // Collapse all events
+            $('#CollapseAll').click(function() {
+                $('.container4').hide();
+                $('#CollapseAll').text('[Collapse All]').addClass('Expanded');
             });
         })
     })(jQuery);

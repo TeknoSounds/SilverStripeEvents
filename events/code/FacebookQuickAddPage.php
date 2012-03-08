@@ -72,8 +72,10 @@ class FacebookQuickAddPage_Controller extends Page_Controller {
         if ($data){
             // Executes during first pass
             $facebookURL = $data['FacebookEvent'];
+            // Trim trailing /'s
+            $facebookURL = eregi_replace('/$', '', $facebookURL);
             // Strip EID from Address
-            eregi('facebook.com/events/(.*)(/*)', $facebookURL, $facebookEID);
+            eregi('facebook.com/events/(.*)', $facebookURL, $facebookEID);
             // Set the EID accordingly, -1 if we didn't get one out
             if (count($facebookEID) > 0){
                 $facebookEID = $facebookEID[1];

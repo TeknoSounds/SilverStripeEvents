@@ -186,7 +186,9 @@ class EditEventPage_Controller extends Page_Controller {
 
         // Facebook Parse
         $facebookURL = $data['FacebookEvent'];
-        eregi('facebook.com/events/(.*)(/*)', $facebookURL, $facebookEID);
+        // Trim trailing /'s
+        $facebookURL = eregi_replace('/$', '', $facebookURL);
+        eregi('facebook.com/events/(.*)', $facebookURL, $facebookEID);
         // Set the EID accordingly, -1 if we didn't get one out
         if (count($facebookEID) > 0){
             $facebookEID = $facebookEID[1];

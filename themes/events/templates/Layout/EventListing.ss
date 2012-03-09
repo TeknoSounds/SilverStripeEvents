@@ -15,7 +15,7 @@
     <% control Events %>
         <div class="EventHolder">
                     <a name="{$ID}"></a>
-                <div class="TimeDateBar" id="{$ID}">
+                <div class="TimeDateBar">
                     <div class="BarInfo">
                         <% if top.CanEditPost %>
                             <div class="EditLink">
@@ -36,6 +36,7 @@
                                      - ${$DoorPrice}
                                 <% end_if %>
                             </a>
+                            &nbsp;<span class="SingleExpand" id="{$ID}">Show/Hide</span>
                         </div>
                         <div class="HeadlinerList">
                             <% control OrderedHeadliners %>
@@ -210,7 +211,7 @@
         $(document).ready(function(){
             // SINGLE EXPANSION CODE
 
-            $('.TimeDateBar').click(function() {
+            $('.SingleExpand').click(function() {
                 if ($('#' + this.id + '_details').css('display') == "none")
                     $('#' + this.id + '_details').show();
                 else

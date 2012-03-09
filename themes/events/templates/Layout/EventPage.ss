@@ -27,6 +27,9 @@
                                             &body=Hope to see you there too! \n\n{$BaseHref}event/show/{$ID}">
             <img src="../themes/events/images/eicons/gmail.png" height="15px"/>
         </a>
+        <% if top.top.CanEditPost %>
+            (<a href="event/edit/{$ID}">Edit Event</a>)
+        <% end_if %>
     </div>
     <% if Name %>
         <div id="Name" class="clear">

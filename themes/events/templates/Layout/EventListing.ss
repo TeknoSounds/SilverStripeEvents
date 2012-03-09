@@ -114,31 +114,31 @@
                                                 $Name
                                             </a>
                                             <% if YoutubeSingle1 %>
-                                                <a href="{$YoutubeSingle1}">S</a>
+                                                -<a href="{$YoutubeSingle1}">S</a>
                                             <% end_if %>
                                             <% if YoutubeSingle2 %>
-                                                <a href="{$YoutubeSingle2}">S</a>
+                                                -<a href="{$YoutubeSingle2}">S</a>
                                             <% end_if %>
                                             <% if YoutubeSingle3 %>
-                                                <a href="{$YoutubeSingle3}">S</a>
+                                                -<a href="{$YoutubeSingle3}">S</a>
                                             <% end_if %>
                                             <% if OfficialWebpage %>
-                                                <a href="{$OfficialWebpage}">OW</a>
+                                                -<a href="{$OfficialWebpage}">OW</a>
                                             <% end_if %>
                                             <% if Soundcloud %>
-                                                <a href="{$Soundcloud}">SC</a>
+                                                -<a href="{$Soundcloud}">SC</a>
                                             <% end_if %>
                                             <% if Facebook %>
-                                                <a href="{$Facebook}">FB</a>
+                                                -<a href="{$Facebook}">FB</a>
                                             <% end_if %>
                                             <% if Twitter %>
-                                                <a href="{$Twitter}">TW</a>
+                                                -<a href="{$Twitter}">TW</a>
                                             <% end_if %>
                                             <% if Myspace %>
-                                                <a href="{$Myspace}">MS</a>
+                                                -<a href="{$Myspace}">MS</a>
                                             <% end_if %>
                                             <% if OfficialYoutube %>
-                                                <a href="{$OfficialYoutube}">YT</a>
+                                                -<a href="{$OfficialYoutube}">YT</a>
                                             <% end_if %>
                                         </div>
                                     <% end_control %>
@@ -151,31 +151,31 @@
                                                 $Name
                                             </a>
                                             <% if YoutubeSingle1 %>
-                                                <a href="{$YoutubeSingle1}">S</a>
+                                                -<a href="{$YoutubeSingle1}">S</a>
                                             <% end_if %>
                                             <% if YoutubeSingle2 %>
-                                                <a href="{$YoutubeSingle2}">S</a>
+                                                -<a href="{$YoutubeSingle2}">S</a>
                                             <% end_if %>
                                             <% if YoutubeSingle3 %>
-                                                <a href="{$YoutubeSingle3}">S</a>
+                                                -<a href="{$YoutubeSingle3}">S</a>
                                             <% end_if %>
                                             <% if OfficialWebpage %>
-                                                <a href="{$OfficialWebpage}">OW</a>
+                                                -<a href="{$OfficialWebpage}">OW</a>
                                             <% end_if %>
                                             <% if Soundcloud %>
-                                                <a href="{$Soundcloud}">SC</a>
+                                                -<a href="{$Soundcloud}">SC</a>
                                             <% end_if %>
                                             <% if Facebook %>
-                                                <a href="{$Facebook}">FB</a>
+                                                -<a href="{$Facebook}">FB</a>
                                             <% end_if %>
                                             <% if Twitter %>
-                                                <a href="{$Twitter}">TW</a>
+                                                -<a href="{$Twitter}">TW</a>
                                             <% end_if %>
                                             <% if Myspace %>
-                                                <a href="{$Myspace}">MS</a>
+                                                -<a href="{$Myspace}">MS</a>
                                             <% end_if %>
                                             <% if OfficialYoutube %>
-                                                <a href="{$OfficialYoutube}">YT</a>
+                                                -<a href="{$OfficialYoutube}">YT</a>
                                             <% end_if %>
                                         </div>
                                     <% end_control %>

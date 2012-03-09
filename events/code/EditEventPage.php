@@ -48,6 +48,7 @@ class EditEventPage_Controller extends Page_Controller {
                 $DescriptionField = new TextareaField('Description', _t('Event.Description','Description')),
                 $FacebookEventField = new TextField('FacebookEvent', 'Facebook Event'),
                 $FacebookPullField = new CheckboxField ('FacebookPull', 'Pull FB Data', true),
+                $DuplicatePostField = new CheckboxField ('DuplicatePost', 'Duplicate Post', false),
                 $TalkbackField = new TextField('Talkback', _t('Event.Talkback','Talkback')),
                 $EventGalleryField = new TextField('EventGallery', _t('Event.EventGallery','Event Gallery')),
                 $IDField = new HiddenField('ID','', '')
@@ -302,6 +303,8 @@ class EditEventPage_Controller extends Page_Controller {
             }
 
             self::create_new_vb_thread($event->Talkback, $event->Date, $event->Name, $event->Venue, $event->City, $event->State, $event->Description);
+            if (in_array('DuplicatePost', $data))
+                $event->Duplicate = $data['DuplicatePost'];
 
             // Credit user and write to DB
             $username = Session::get('username');
